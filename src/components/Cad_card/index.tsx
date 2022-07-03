@@ -35,15 +35,15 @@ class Cad_Card extends React.Component<Props, States>{
                         </DivTittle>
 
                         <DivInput>
-                            <Cad_InputsNames titulo="Email:"/>
+                            <Cad_InputsNames titulo="Email:" tipo="email"/>
 
-                            <Cad_InputsNames titulo="Senha:"/>
+                            <Cad_InputsNames titulo="Senha:" tipo="password"/>
 
-                            <Cad_InputsNames titulo="Confirme a senha:"/>
+                            <Cad_InputsNames titulo="Confirme a senha:" tipo="password"/>
                         </DivInput>
 
                         <DivButton>
-                            <Submit color="#01C77F">Registrar</Submit>
+                            <Submit color="#01C77F" Tletra={15} padding={30} type="submit">Registrar</Submit>
                         </DivButton>
 
                     </form>
