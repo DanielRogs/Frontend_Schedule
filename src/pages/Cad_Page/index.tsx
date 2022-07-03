@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
-import Cad_Card from './components/Cad_card';
+import './styled.css';
+import Cad_Card from '../../components/Cad_card';
 
-function App() {
+function Cad_Page() {
   return (
     <div className="App">
 
@@ -15,4 +15,4 @@ function App() {
   );
 }
 
-export default App;
+export default Cad_Page;
