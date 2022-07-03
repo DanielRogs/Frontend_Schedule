@@ -1,16 +1,14 @@
 import React from 'react';
 import './App.css';
-import Cad_Card from './components/Cad_card';
+import Login_Card from './components/Login_Card';
 
 function App() {
   return (
     <div className="App">
 
-      <div className='logo_part'>
-        <h2>Schedule</h2>
-      </div>
+        <h1>Schedule</h1>
 
-      <Cad_Card />
+      <Login_Card />
     </div>
   );
 }
