@@ -4,7 +4,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-In the project directory, you can run:
+First, make sure you got npm and node (>= 14 version) installed in your machine
+
+run the follow command in the project folder:
+
+### 'npm install'
+
+After that, go to your src folder and run:
 
 ### `npm start`
 
