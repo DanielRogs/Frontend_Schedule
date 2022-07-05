@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import React from "react"
 import { Submit } from "../Button/styles";
 import Cad_InputsNames from "../Cad_InputsNames";
@@ -9,17 +10,17 @@ import {
             DivInput
         } from "./styled";
 
-interface Props {
 
+interface State {
+    Email:string;
+    Senha:string;
+    ConfSenha:string;
 }
 
-interface States {
-
-}
-
-class Cad_Card extends React.Component<Props, States>{
+class Cad_Card extends React.Component<{},State>{
     constructor(Props:any){
         super(Props)
+        this.state = { Email:'', Senha:'', ConfSenha:'' }
     }
 
     render(): React.ReactNode {
@@ -35,11 +36,11 @@ class Cad_Card extends React.Component<Props, States>{
                         </DivTittle>
 
                         <DivInput>
-                            <Cad_InputsNames titulo="Email:" tipo="email"/>
+                            <Cad_InputsNames titulo="Email:" tipo="email" value={this.state.Email} onChange={(e:React.ChangeEvent<HTMLInputElement>) => {this.setState({Email:e.target.value})}} />
 
-                            <Cad_InputsNames titulo="Senha:" tipo="password"/>
+                            <Cad_InputsNames titulo="Senha:" tipo="password" value={this.state.Senha} onChange={(e:React.ChangeEvent<HTMLInputElement>) => {this.setState({Senha:e.target.value})}} />
 
-                            <Cad_InputsNames titulo="Confirme a senha:" tipo="password"/>
+                            <Cad_InputsNames titulo="Confirme a senha:" tipo="password" value={this.state.ConfSenha} onChange={(e:React.ChangeEvent<HTMLInputElement>) => {this.setState({ConfSenha:e.target.value})}} />
                         </DivInput>
 
                         <DivButton>

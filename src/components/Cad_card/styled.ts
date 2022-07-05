@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Div = styled.div`
     border: solid 1.5px #01C77F;
     border-radius: 25px;
-    margin: 0px 50px 0px 50px;
+    margin: 20px 50px 50px 50px;
     padding: 0px;
     text-align: center;
 `;
@@ -23,6 +23,10 @@ export const DivInput = styled.div`
 
     @media (max-width: 620px) {
         width: 250px;
+    {
+
+    @media (max-width: 411px) {
+        width: 150px;
     {
 `
 

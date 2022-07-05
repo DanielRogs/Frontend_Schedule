@@ -1,18 +1,28 @@
 import React from 'react';
 import './styled.css';
 import Cad_Card from '../../components/Cad_card';
+import Logo from '../../assets/Image/logo.svg'
 
-function Cad_Page() {
+
+function CadPage() {
   return (
-    <div className="App">
+    <>
+      <div className="App">
 
-      <div className='logo_part'>
-        <h2>Schedule</h2>
+        <div className='logoPart'>
+          <img src={Logo}/>
+          <h2>Schedule</h2>
+        </div>
+
+        <Cad_Card />
       </div>
-
-      <Cad_Card />
-    </div>
+      <footer> 
+        <div className='divfooter'></div>
+      </footer>
+    </>
+    
+    
   );
 }
 
-export default Cad_Page;
+export default CadPage;
