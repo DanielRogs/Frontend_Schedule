@@ -1,10 +1,10 @@
 import React from 'react';
-import Cont_Page from './components/Cont_Page';
-import './App.css'
+import Cont_Page from '../../components/Cont_Page';
+import './styled.css'
 import { AiOutlineArrowLeft } from "react-icons/ai"
 import { IconContext } from "react-icons"
 
-function App() {
+function CadContact() {
   return (
     <div className="App">
         <IconContext.Provider value={{ size: "30" }}>
@@ -15,4 +15,4 @@ function App() {
   );
 }
 
-export default App;
+export default CadContact;
