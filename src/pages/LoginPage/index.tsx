@@ -1,33 +1,32 @@
 import React from 'react';
-import './styled.css';
 import LoginCard from '../../components/LoginCard';
 import HeaderLogin from '../../assets/Image/headerLogin.png';
 import FooterLogin from '../../assets/Image/footerLogin.png';
 import Agenda from '../../assets/Image/agenda.png';
 import {
-        Div,
+        Title,
         Img,
         Header,
         Section,
         Footer
-           } from './styled'
+} from './styled'
 
 function LoginPage() {
   return (
     <div className="LoginPage">
       <Header className='headerLogin'>
-        <h1 className='scheduleTitle'>Schedule</H1>
-        <Img src={HeaderLogin} alt='Formas geometricas - parte superior' />
+        <Title className='scheduleTitle'>Schedule</Title>
+        <Img heightPx = {120} src={HeaderLogin} alt='Formas geometricas - parte superior' />
       </Header>
 
       <Section className="conteudoLogin">
         <LoginCard />
-        <Img src={Agenda} alt='Agenda de contatos' classname="imagem"/>
+        <img src={Agenda} alt='Agenda de contatos' className='agenda_img'/>
       </Section>
 
 
       <Footer className='footerLogin'>
-        <Img src={FooterLogin} alt='Formas geometricas - parte inferior' />
+        <Img  heightPx = {130} src={FooterLogin} alt='Formas geometricas - parte inferior' />
       </Footer>
     </div>
   );
