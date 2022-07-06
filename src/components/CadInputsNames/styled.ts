@@ -14,6 +14,7 @@ export const Input = styled.input<Props1>`
     background: ${(p) => p.fundo};
     border-radius: ${(p) => p.raioBorda}px;
     width: 450px;
+    @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
     font-family: Oxygen, Century Gothic, Verdana;
     border: none;
     text-align: center;
@@ -37,6 +38,7 @@ export const Input = styled.input<Props1>`
 `;
 
 export const Text = styled.p<Props2>`
+    @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
     font-family: Oxygen, Century Gothic, Verdana;
     font-size: ${(p) => p.TLetra}px;
     color: #000000;

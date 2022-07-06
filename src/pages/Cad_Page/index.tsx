@@ -1,24 +1,33 @@
 import React from 'react';
-import './styled.css';
 import CadastroCad from '../../components/CadastroCad';
 import Logo from '../../assets/Image/logo.svg'
-
+import {
+        Div,
+        DivLogo,
+        DivFooter,
+        Img,
+        H2,
+        Footer
+} from './styled'
 
 function CadPage() {
   return (
     <>
-      <div className="App">
+      <Div className="All">
 
-        <div className='logoPart'>
-          <img src={Logo} />
-          <h2>Schedule</h2>
-        </div>
+        <DivLogo className='logoPart'>
+          <Img src={Logo} />
+          <H2>Schedule</H2>
+        </DivLogo>
 
         <CadastroCad />
-      </div>
-      <footer>
-        <div className='divfooter'></div>
-      </footer>
+      
+        <Footer>
+          <DivFooter className='divfooter'></DivFooter>
+        </Footer>
+        
+      </Div>
+
     </>
 
 
