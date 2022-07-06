@@ -20,4 +20,8 @@ export const Submit = styled.button<Props>`
         background: #129979;
         color: black;
     }
+
+    @media (max-width: 1075px) {
+        font-size: ${(p) => p.Tletra/2}px;
+    }
 `

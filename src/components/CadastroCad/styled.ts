@@ -35,6 +35,7 @@ export const DivButton = styled.div`
 `;
 
 export const Tittle = styled.h3`
+    @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
     font-family: Oxygen, Century Gothic, Verdana;
     font-size: 20px;
     color: #000000;

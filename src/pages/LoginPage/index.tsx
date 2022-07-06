@@ -16,7 +16,7 @@ function LoginPage() {
     <div className="LoginPage">
       <Header className='headerLogin'>
         <Title className='scheduleTitle'>Schedule</Title>
-        <Img heightPx = {120} src={HeaderLogin} alt='Formas geometricas - parte superior' />
+        <Img heightPx = {8} src={HeaderLogin} alt='Formas geometricas - parte superior' />
       </Header>
 
       <Section className="conteudoLogin">
@@ -26,7 +26,7 @@ function LoginPage() {
 
 
       <Footer className='footerLogin'>
-        <Img  heightPx = {130} src={FooterLogin} alt='Formas geometricas - parte inferior' />
+        <Img  heightPx = {11.2} src={FooterLogin} alt='Formas geometricas - parte inferior' />
       </Footer>
     </div>
   );
