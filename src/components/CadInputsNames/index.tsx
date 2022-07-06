@@ -9,8 +9,8 @@ interface Props {
 }
 
 
-class Cad_InputsNames extends React.Component<Props>{
-    constructor(Props:any){
+class CadInputsNames extends React.Component<Props>{
+    constructor(Props:Props){
         super(Props)
     }
 
@@ -28,4 +28,4 @@ class Cad_InputsNames extends React.Component<Props>{
     
 }
 
-export default Cad_InputsNames;
+export default CadInputsNames;
