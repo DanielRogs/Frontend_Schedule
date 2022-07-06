@@ -4,24 +4,31 @@ import LoginCard from '../../components/LoginCard';
 import HeaderLogin from '../../assets/Image/headerLogin.png';
 import FooterLogin from '../../assets/Image/footerLogin.png';
 import Agenda from '../../assets/Image/agenda.png';
+import {
+        Div,
+        Img,
+        Header,
+        Section,
+        Footer
+           } from './styled'
 
 function LoginPage() {
   return (
     <div className="LoginPage">
-      <header className='headerLogin'>
-        <h1 className='scheduleTitle'>Schedule</h1>
-        <img src={HeaderLogin} alt='Formas geometricas - parte superior' />
-      </header>
+      <Header className='headerLogin'>
+        <h1 className='scheduleTitle'>Schedule</H1>
+        <Img src={HeaderLogin} alt='Formas geometricas - parte superior' />
+      </Header>
 
-      <section className="conteudoLogin">
+      <Section className="conteudoLogin">
         <LoginCard />
-        <img src={Agenda} alt='Agenda de contatos'/>
-      </section>
+        <Img src={Agenda} alt='Agenda de contatos' classname="imagem"/>
+      </Section>
 
 
-      <footer className='footerLogin'>
-        <img src={FooterLogin} alt='Formas geometricas - parte inferior' />
-      </footer>
+      <Footer className='footerLogin'>
+        <Img src={FooterLogin} alt='Formas geometricas - parte inferior' />
+      </Footer>
     </div>
   );
 }
