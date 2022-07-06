@@ -28,12 +28,12 @@ export const Input = styled.input<Props1>`
     @media (max-width: 620px) {
         width: 250px;
         border: 0px;
-    {
+    }
 
     @media (max-width: 411px) {
         width: 150px;
         border: 0px;
-    {
+    }
 `;
 
 export const Text = styled.p<Props2>`
