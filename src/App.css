@@ -1,11 +1,5 @@
 body {
   margin: 0px;
   padding: 0px;
-}
-
-h1{
-  font-family: Oxygen, Century Gothic, Verdana;
-  font-weight:400;
-  text-decoration: underline;
-  text-decoration-color: #01C77F;
+  background-color: #F5F5F5;
 }

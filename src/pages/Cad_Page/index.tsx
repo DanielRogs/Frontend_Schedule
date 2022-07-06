@@ -1,6 +1,6 @@
 import React from 'react';
 import './styled.css';
-import Cad_Card from '../../components/Cad_card';
+import CadastroCad from '../../components/CadastroCad';
 import Logo from '../../assets/Image/logo.svg'
 
 
@@ -10,18 +10,18 @@ function CadPage() {
       <div className="App">
 
         <div className='logoPart'>
-          <img src={Logo}/>
+          <img src={Logo} />
           <h2>Schedule</h2>
         </div>
 
-        <Cad_Card />
+        <CadastroCad />
       </div>
-      <footer> 
+      <footer>
         <div className='divfooter'></div>
       </footer>
     </>
-    
-    
+
+
   );
 }
 
