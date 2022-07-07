@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
-import LoginPage from './pages/LoginPage';
+import AppRoutes from './routes';
 
-function App() {
-  return (
-    <LoginPage />
-  );
+
+class App extends React.Component  {
+  render (){
+    return (
+      <AppRoutes />
+    )
+  }
 }
 
 export default App;
