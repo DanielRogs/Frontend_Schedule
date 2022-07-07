@@ -1,11 +1,17 @@
 import React from 'react';
-import './App.css';
-import LoginPage from './pages/LoginPage';
+import AppRoutes from './routes';
+import GlobalStyle from './globalStyles';
 
-function App() {
-  return (
-    <LoginPage />
-  );
+
+class App extends React.Component  {
+  render (){
+    return (
+      <>
+        <GlobalStyle />
+        <AppRoutes />
+      </>
+    )
+  }
 }
 
 export default App;

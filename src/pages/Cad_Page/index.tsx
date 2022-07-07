@@ -1,6 +1,7 @@
 import React from 'react';
 import CadastroCad from '../../components/CadastroCad';
 import Logo from '../../assets/Image/logo.svg'
+import { Link } from 'react-router-dom';
 import {
         Div,
         DivLogo,
@@ -15,10 +16,13 @@ function CadPage() {
     <>
       <Div className="All">
 
-        <DivLogo className='logoPart'>
-          <Img src={Logo} />
-          <H2>Schedule</H2>
+        <Link to ='/login'>
+          <DivLogo className='logoPart'>
+            <Img src={Logo} />
+            <H2>Schedule</H2>
         </DivLogo>
+        
+        </Link>
 
         <CadastroCad />
       
