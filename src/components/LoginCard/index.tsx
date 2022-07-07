@@ -1,6 +1,7 @@
 import React from "react"
 import { Submit } from "../Button/styles";
 import { Div, Tittle, Input, P} from "./styled";
+import { Link } from 'react-router-dom';
 
 interface State{
     Email:string
@@ -37,7 +38,9 @@ class LoginCard extends React.Component<{}, State>{
                     
                 </form>
 
-                    <Submit color="#129979" Tletra={20} padding={0} className="button cad">Cadastre-se</Submit>
+                    <Link to='/cadastro'>
+                        <Submit color="#129979" Tletra={20} padding={0} className="button cad">Cadastre-se</Submit>
+                    </Link>
 
                 
 
