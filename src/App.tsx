@@ -1,12 +1,15 @@
 import React from 'react';
-import './App.css';
 import AppRoutes from './routes';
+import GlobalStyle from './globalStyles';
 
 
 class App extends React.Component  {
   render (){
     return (
-      <AppRoutes />
+      <>
+        <GlobalStyle />
+        <AppRoutes />
+      </>
     )
   }
 }
