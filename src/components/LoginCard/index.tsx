@@ -35,7 +35,7 @@ class LoginCard extends React.Component<{}, State>{
 
                     <AuthContext.Consumer>
                         {
-                            ({login, user}) =>(
+                            ({login}) =>(
                                 <Submit onClick={() => (login(this.state.email, this.state.password))} color="#01C77F" Tletra={20} padding={0} className="button log">Entrar</Submit>
                             )
                         }
