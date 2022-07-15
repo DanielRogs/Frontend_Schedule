@@ -7,15 +7,20 @@ interface Props{
 }
 
  class AuthProvider extends React.Component<Props,InterfaceAuthContext>{
+     setUser: (user:User|null) => void;
+
     constructor(props:Props){
         super(props)
 
+
+        this.setUser = (user:User|null) => {
+            this.setState({user})
+
+        }
+
         this.state = { 
             user:null,
-            setUser: (user:User) =>{
-                this.setState({user})
-            } 
-
+            setUser: this.setUser
         }
     }
 
