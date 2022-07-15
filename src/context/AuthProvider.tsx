@@ -1,30 +1,24 @@
 import React, { createContext } from 'react';
-import AuthContext, { InterfaceAuthContext } from './AuthContext';
-import api from '../services/api';
+import AuthContext, { InterfaceAuthContext, User } from './AuthContext';
+import {login} from '../services/user'
+
 interface Props{
     children: JSX.Element;
 }
 
- class AuthProvider extends React.Component<Props,InterfaceAuthContext >{
-
+ class AuthProvider extends React.Component<Props,InterfaceAuthContext>{
     constructor(props:Props){
         super(props)
 
         this.state = { 
-            login :async (email:string, password:string) =>{
-            try{
-                const res = await api.post('/login', {email,password})
-                alert(Object.keys(res.data.user))
-            }catch(err){
-                alert(err)
-            }
-            
-            },
-
-            user: null
+            user:null,
+            setUser: (user:User) =>{
+                this.setState({user})
+            } 
 
         }
     }
+
      render(){
          return(
              <AuthContext.Provider value={this.state}>

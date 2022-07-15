@@ -1,9 +1,14 @@
 import { createContext } from 'react';
 
-export interface InterfaceAuthContext{
-    user:any,
-    login: (email:string, password:string) => any,
+export interface User{
+    _id:string,
+    name:string,
+    email:string,
+}
 
+export interface InterfaceAuthContext{
+    user:User|null,
+    setUser:(user:User) =>void
 }
 
 const AuthContext = createContext<InterfaceAuthContext>({} as InterfaceAuthContext)
