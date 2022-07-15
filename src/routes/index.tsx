@@ -8,7 +8,7 @@ import { InterfaceAuthContext } from "../context/AuthContext";
 export default class AppRoutes extends React.Component{
 
     static contextType = AuthContext
-    declare context: React.ContextType<typeof AuthContext>
+    //declare context: React.ContextType<typeof AuthContext>
  
     userNotLoggedRoutes = ( 
              <Routes>
@@ -17,18 +17,30 @@ export default class AppRoutes extends React.Component{
            </Routes>
     )
 
-    userRoutes = (
-             <Routes>
-                <Route path="/" element={<h1>Bem vindo</h1>} />
-           </Routes>
+    userLogged = (
+                 <AuthContext.Consumer>
+                     {
+                    ({user}) => (
+                    <Routes>
+                        <Route path="*" element={<h1>Bem vindo, {!! user ? user.name:"null"} !!!</h1>} />
+                    </Routes>
+                    )
+                     }
+                 </AuthContext.Consumer>
     )
 
 
     render(){
-        const {user}= this.context
+        const user= this.context
 
         return(
-            <h1>{!!user ? user.name :"vazio"}</h1>
+            <AuthContext.Consumer>
+                {
+                    ({user}) =>(
+                        !!user ? this.userLogged:this.userNotLoggedRoutes
+                    )
+                }
+            </AuthContext.Consumer>
             
         )
 
