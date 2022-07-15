@@ -47,11 +47,11 @@ export const Input = styled.input`
 
     @media (max-width: 1160px) {
         width: 300px;
-    {
+    }
 
     @media (max-width: 905px) {
         width: 200px;
-    {
+    }
 `
 
 export const Tittle = styled.h2`
@@ -62,7 +62,7 @@ export const Tittle = styled.h2`
 
     @media (max-width: 889px) {
         font-size: 14px;
-    {
+    }
 `
 
 export const P = styled.p`
