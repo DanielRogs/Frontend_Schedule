@@ -21,7 +21,7 @@ export const Title = styled.h1`
 
     @media (max-height: 1080px) {
         font-size: 60px;
-    {
+    }
 `;
 
 export const Img = styled.img<Props>`
@@ -30,7 +30,7 @@ export const Img = styled.img<Props>`
 
     @media (max-width: 1075px) {
         height: 90px;
-    {
+    }
 `;
 
 export const Section = styled.section`
@@ -48,19 +48,19 @@ export const Section = styled.section`
         .agenda_img{
            height: 50vh; 
         }
-    {
+    }
 
     @media (max-width: 683px) {
         .agenda_img{
             height: 40vh; 
         }
-    {
+    }
 
     @media (max-width: 627px) {
         .agenda_img{
            height: 0vh; 
         }
-    {
+    }
 `;
 
 export const Footer = styled.footer`
@@ -71,17 +71,17 @@ export const Footer = styled.footer`
         Img{
             height: 16vw;
         }
-    {
+    }
 
     @media (max-width: 911px) {
         Img{
             height: 30vw;
         }
-    {
+    }
 
     @media (max-width: 811px) {
         Img{
             height: 40vw;
         }
-    {
+    }
 `;
