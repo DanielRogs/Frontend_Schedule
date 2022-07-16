@@ -1,27 +1,50 @@
 import React from "react";
 import AuthContext from "../../context/AuthContext";
-import { Header } from "./styled";
+import { Header, Pesquisa } from "./styled";
 import { AiOutlineSearch } from "react-icons/ai"
-import { Submit } from "../Button/styles";
+import { ButtonResponsivo } from "../Button/styles";
 
 
-class HeaderContactPage extends React.Component{
+interface State {
+    search: string;
+}
+
+class HeaderContactPage extends React.Component<{},State> {
+
+    constructor(Props:any){
+        super(Props)
+        this.state = {search:""}
+    }
 
 
-    render() :React.ReactNode {
+    render(): React.ReactNode {
         return (
-            
+
             <AuthContext.Consumer>
                 {
-                    ({user}) =>(
+                    ({ user }) => (
                         <Header>
-                             <p>Bem vindo, {!!user ? user.name: "null"}</p> 
-                             <div>
-                                <input type="text" placeholder="Buscar contato"></input>
-                                <AiOutlineSearch/>
-                             </div>
-                             
-                             <Submit>Adicionar Contado</Submit>
+                            <p>Bem vindo, {!!user ? user.name : "null"}</p>
+                            <Pesquisa>
+                                <input onChange={(e) => { this.setState({search: e.target.value}) }}
+                                    type="text"
+                                    placeholder="Buscar contato"
+                                    value={this.state.search}
+                                />
+                                <AiOutlineSearch
+                                    className="icone_pesquisa"
+                                    title="lupa"
+                                    color="#01C77F"
+                                />
+
+                            </Pesquisa>
+
+                            <ButtonResponsivo
+                                color="#01C77F"
+                                Tletra={1.2}
+                                padding={1.5}>
+                                Adicionar Contato
+                            </ButtonResponsivo>
                         </Header>
                     )
                 }
@@ -29,7 +52,7 @@ class HeaderContactPage extends React.Component{
 
         )
 
-        
+
     }
 
 }
