@@ -1,4 +1,5 @@
 import React from "react"
+import HeaderContactPage from "../../components/HeadContactPage";
 
 
 interface State {
@@ -14,9 +15,8 @@ class ContactPage extends React.Component<{}, State>{
 
     render(): React.ReactNode {
         return (
-            <div>
+            <HeaderContactPage />
 
-            </div>
 
         )
     }
