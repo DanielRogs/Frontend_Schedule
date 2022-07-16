@@ -11,6 +11,7 @@ export default class AppRoutes extends React.Component{
     //declare context: React.ContextType<typeof AuthContext>
  
     userNotLoggedRoutes = ( 
+
              <Routes>
                 <Route path="/*" element={<LoginPage/>} />
                 <Route path="/login" element={<LoginPage/>} />
