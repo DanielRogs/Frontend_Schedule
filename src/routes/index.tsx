@@ -7,8 +7,8 @@ export default class AppRoutes extends React.Component{
 
     
     userNotLoggedRoutes = ( 
-             <Routes>
-                <Route path="/login" element={<LoginPage/>} />
+            <Routes>
+                <Route path="/" element={<LoginPage/>} />
                 <Route path="/cadastro" element={<CadPage/>} />
            </Routes>
     )
