@@ -10,7 +10,7 @@ export const Div = styled.div`
 
 export const DivTittle = styled.div`
     background: white;
-    heigth: auto;
+    height: auto;
     width: 150px;
     text-align: center;
     margin: 0 auto;
@@ -23,11 +23,11 @@ export const DivInput = styled.div`
 
     @media (max-width: 620px) {
         width: 250px;
-    {
+    }
 
     @media (max-width: 411px) {
         width: 150px;
-    {
+    }
 `
 
 export const DivButton = styled.div`
