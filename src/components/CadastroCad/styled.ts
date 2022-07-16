@@ -9,9 +9,11 @@ export const Div = styled.div`
 `;
 
 export const DivTittle = styled.div`
+
     background: #F5F5F5;
     height: auto;
     width: 10%;
+
     text-align: center;
     margin: 0 auto;
 `;
