@@ -16,13 +16,14 @@ function CadPage() {
     <>
       <Div className="All">
 
-        <Link to ='/login'>
+        
           <DivLogo className='logoPart'>
             <Img src={Logo} />
-            <H2>Schedule</H2>
+            <Link to ='/'>
+              <H2>Schedule</H2>
+            </Link>
         </DivLogo>
-        
-        </Link>
+    
 
         <CadastroCad />
       
