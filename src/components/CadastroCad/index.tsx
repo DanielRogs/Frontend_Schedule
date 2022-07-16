@@ -2,6 +2,8 @@
 import React from "react"
 import { Submit } from "../Button/styles";
 import CadInputsNames from "../CadInputsNames";
+import {cadastro} from '../../services/user'
+
 import {
     Tittle,
     Div,
@@ -12,16 +14,30 @@ import {
 
 
 interface State {
-    Email: string;
-    Senha: string;
-    ConfSenha: string;
+    email: string;
+    name: string;
+    password: string;
+    confpassword: string;
 }
 
 class CadastroCard extends React.Component<{}, State>{
     constructor(Props: any) {
         super(Props)
-        this.state = { Email: '', Senha: '', ConfSenha: '' }
+        this.state = {name:'', email: '', password: '', confpassword: '' }
     }
+
+  handleclickCadastro(e:React.MouseEvent<HTMLElement>){
+    if (this.state.password != this.state.confpassword){
+        alert("A senha e a confirmação de senha estão diferentes")
+        return
+    }
+
+    const {name, email, password} = this.state
+    cadastro(name,email,password)
+
+
+
+  }
 
     render(): React.ReactNode {
         return (
@@ -30,28 +46,35 @@ class CadastroCard extends React.Component<{}, State>{
                         <Tittle>Cadastro</Tittle>
                     </DivTittle>
                     <form>
+
                         <DivInput>
+                            <CadInputsNames
+                                titulo="Name:"
+                                tipo="text"
+                                value={this.state.name}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ name: e.target.value }) }} />
+
                             <CadInputsNames
                                 titulo="Email:"
                                 tipo="email"
-                                value={this.state.Email}
-                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ Email: e.target.value }) }} />
+                                value={this.state.email}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ email: e.target.value }) }} />
 
                             <CadInputsNames
                                 titulo="Senha:"
                                 tipo="password"
-                                value={this.state.Senha}
-                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ Senha: e.target.value }) }} />
+                                value={this.state.password}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ password: e.target.value }) }} />
 
                             <CadInputsNames
                                 titulo="Confirme a senha:"
                                 tipo="password"
-                                value={this.state.ConfSenha}
-                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ ConfSenha: e.target.value }) }} />
+                                value={this.state.confpassword}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ confpassword: e.target.value }) }} />
                         </DivInput>
 
                         <DivButton>
-                            <Submit color="#01C77F" padding={20} Tletra={15} type='submit'>Cadastrar</Submit>
+                            <Submit onClick={this.handleclickCadastro.bind(this)} color="#01C77F" padding={20} Tletra={15} type='submit'>Cadastrar</Submit>
                         </DivButton>
                     </form>
             </Div>
