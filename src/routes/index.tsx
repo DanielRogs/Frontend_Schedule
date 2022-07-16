@@ -6,9 +6,6 @@ import AuthContext from "../context/AuthContext";
 import { InterfaceAuthContext } from "../context/AuthContext";
 
 export default class AppRoutes extends React.Component{
-
-    static contextType = AuthContext
-    //declare context: React.ContextType<typeof AuthContext>
  
     userNotLoggedRoutes = ( 
 
@@ -33,7 +30,6 @@ export default class AppRoutes extends React.Component{
 
 
     render(){
-        const user= this.context
 
         return(
             <AuthContext.Consumer>
