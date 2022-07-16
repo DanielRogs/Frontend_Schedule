@@ -3,7 +3,7 @@ import {Route, Routes } from 'react-router-dom';
 import LoginPage from "../pages/LoginPage";
 import CadPage from "../pages/Cad_Page";
 import AuthContext from "../context/AuthContext";
-import { InterfaceAuthContext } from "../context/AuthContext";
+import ContactPage from "../pages/ContactPage";
 
 export default class AppRoutes extends React.Component{
  
@@ -17,15 +17,9 @@ export default class AppRoutes extends React.Component{
     )
 
     userLogged = (
-                 <AuthContext.Consumer>
-                     {
-                    ({user}) => (
-                    <Routes>
-                        <Route path="*" element={<h1>Bem vindo, {!! user ? user.name:"null"} !!!</h1>} />
-                    </Routes>
-                    )
-                     }
-                 </AuthContext.Consumer>
+             <Routes>
+                <Route path="/*" element={<ContactPage/>} />
+           </Routes>
     )
 
 
@@ -35,7 +29,7 @@ export default class AppRoutes extends React.Component{
             <AuthContext.Consumer>
                 {
                     ({user}) =>(
-                        !!user ? this.userLogged:this.userNotLoggedRoutes
+                        true ? this.userLogged:this.userNotLoggedRoutes
                     )
                 }
             </AuthContext.Consumer>
