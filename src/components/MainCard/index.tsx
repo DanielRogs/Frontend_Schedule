@@ -16,7 +16,8 @@ import Lixo from '../../assets/Image/lixo.svg';
 import Lapis from '../../assets/Image/lapis.svg';
 
 interface Props {
-
+ Name: string
+ Numero: string
 }
 
 
@@ -40,9 +41,9 @@ class MainCard extends React.Component<Props>{
                         </DivFigures>
                     </DivTop>
                     <DivBottom>
-                        <Name>Alex Fernandes</Name>
+                        <Name>{this.props.Name}</Name>
 
-                        <Number>(61)9999-9999</Number>
+                        <Number>{this.props.Numero}</Number>
                     </DivBottom>
                 </Div>
                 
