@@ -18,28 +18,32 @@ import {
         } from './styled';
 import Perfil from '../../assets/Image/PerfilElipse.svg'
 import Close from '../../assets/Image/x.svg'
+import { addContact, getContactUser } from "../../services/contact";
+import AuthContext from "../../context/AuthContext";
+
 
 interface State {
-    nome: string;
-    telefone: string;
-    telefonefixo: string;
+    name: string;
+    lastname: string;
+    phone: string;
     email: string;
 }
 
 interface Props {
     modalIsVisible: boolean
     setVisible: (visible: boolean) => void
+    setContacts:(contacts:Array<any>) => void 
 }
 
 class Modal extends React.Component<Props, State>{
     constructor(Props: any) {
         super(Props)
-        this.handleClick = this.handleClick.bind(this);
-        this.state = { nome: '', telefone: '', telefonefixo: '', email: '' }
+        this.handleClickCloseModal = this.handleClickCloseModal.bind(this);
+        this.state = { name: '', lastname: '', phone: '', email: '' }
     }
 
     
-    handleClick() {
+    handleClickCloseModal() {
         this.props.setVisible(false)
       }
     
@@ -55,7 +59,7 @@ class Modal extends React.Component<Props, State>{
                         <HeadDiv>
                             <Tittle>Adicionar Contato</Tittle>
 
-                            <button onClick={this.handleClick}>
+                            <button onClick={this.handleClickCloseModal}>
                                 <Img1 src={Close} />
                             </button>
                             
@@ -66,17 +70,17 @@ class Modal extends React.Component<Props, State>{
                             <UserDiv>
                                 <NomeInput
                                     placeholder="Nome"
-                                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ nome: e.target.value }) }}
+                                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ name: e.target.value }) }}
                                 />
 
                                 <TelefoneInput
-                                    placeholder="Telefone"
-                                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ telefone: e.target.value }) }}
+                                    placeholder="Sobre nome"
+                                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ lastname: e.target.value }) }}
                                 />
 
                                 <TelefoneFixo
                                     placeholder="Telefeone Fixo"
-                                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ telefonefixo: e.target.value }) }}
+                                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ phone: e.target.value }) }}
                                 />
 
                                 <EmailInput 
@@ -93,8 +97,27 @@ class Modal extends React.Component<Props, State>{
                                 <div>
                                     <ButtonSub>Adicionar imagem</ButtonSub>
                                 </div>
+
+
+                                <AuthContext.Consumer>
+                                    {
+                                        ({user}) =>(
+
+                                            <div className="confirmButtom">
+                                                <Button onClick={async () => {
+                                                    await addContact(this.state.name, this.state.lastname, this.state.phone, this.state.email, user!._id)
+                                                    this.props.setContacts(await getContactUser(user!._id))
+
+                                                    }
+                                                }>Confirmar</Button>
+                                            </div>
+                                        )
+                                    }
+                                </AuthContext.Consumer>
+
+
                                 <div className="confirmButtom">
-                                    <Button onClick={this.handleClick}>Confirmar</Button>
+                                    <Button onClick={this.handleClickCloseModal}>Fechar</Button>
                                 </div>
                             </UserDiv2>  
 
