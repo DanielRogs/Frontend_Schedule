@@ -9,7 +9,6 @@ class App extends React.Component  {
       <>
         <GlobalStyle />
         <AppRoutes />
-        <InfoPage />
       </>
     )
   }
