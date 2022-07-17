@@ -29,7 +29,8 @@ export default class AppRoutes extends React.Component{
             <AuthContext.Consumer>
                 {
                     ({user}) =>(
-                        user ? this.userLogged:this.userNotLoggedRoutes
+
+                        !!user ? this.userLogged:this.userNotLoggedRoutes
                     )
                 }
             </AuthContext.Consumer>
