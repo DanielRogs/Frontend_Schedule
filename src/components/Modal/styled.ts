@@ -6,7 +6,7 @@ export const Div = styled.div`
     background-color: #01C77F;
     width: 40vw;
     height: 20vw;
-    padding: 15px;
+    padding: 2em;
     gap: 6%;
     position: relative;
     border-radius: 35px 6px 35px 35px;
@@ -22,13 +22,6 @@ export const HeadDiv = styled.div`
         border: none;
     }
 `
-
-export const SubDiv = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-`
-
 export const Tittle = styled.p`
     margin: 0;
     font-size: 1.2em;
@@ -40,6 +33,14 @@ export const Tittle = styled.p`
     }
 `
 
+export const SubDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+`
+
+
+
 export const UserDiv = styled.div`
     width: 20em;
     display: flex;
@@ -47,7 +48,7 @@ export const UserDiv = styled.div`
     gap: 1.3em;
 `
 
-export const NomeInput = styled.input`
+export const Input = styled.input`
     @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
     font-family: 'Oxygen', Century Gothic, Verdana; 
     background: #D9D9D9;;
@@ -55,7 +56,7 @@ export const NomeInput = styled.input`
     padding: 1em;
     border: none;
     color: black;
-    cursor: pointer;
+    
     transition: 0.25s;
     font-size: 0.7em;
 
@@ -63,60 +64,6 @@ export const NomeInput = styled.input`
         background: #129979;
         color: white;
     }
-`
-
-export const TelefoneInput = styled.input`
-    @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
-    font-family: 'Oxygen', Century Gothic, Verdana; 
-    background: #D9D9D9;;
-    border-radius: 15px;
-    padding: 1em;
-    border: none;
-    color: black;
-    cursor: pointer;
-    transition: 0.25s;
-    font-size: 0.7em;
-
-    &:focus{
-        background: #129979;
-        color: white;
-    }
-`
-
-export const TelefoneFixo = styled.input`
-    @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
-        font-family: 'Oxygen', Century Gothic, Verdana; 
-        background: #D9D9D9;;
-        border-radius: 15px;
-        padding: 1em;
-        border: none;
-        color: black;
-        cursor: pointer;
-        transition: 0.25s;
-        font-size: 0.7em;
-
-        &:focus{
-            background: #129979;
-            color: white;
-        }
-`
-
-export const EmailInput = styled.input`
-    @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
-        font-family: 'Oxygen', Century Gothic, Verdana; 
-        background: #D9D9D9;;
-        border-radius: 15px;
-        padding: 1em;
-        border: none;
-        color: black;
-        cursor: pointer;
-        transition: 0.25s;
-        font-size: 0.7em;
-
-        &:focus{
-            background: #129979;
-            color: white;
-        }
 `
 
 export const UserDiv2 = styled.div`
@@ -127,7 +74,7 @@ export const UserDiv2 = styled.div`
     gap: 0.1em;
 
     .confirmButtom{
-        align: right;
+        
     }
 `
 
@@ -169,39 +116,28 @@ export const ButtonSub = styled.button`
     }
 `
 
+export const ButtonDiv = styled.div`
+    display: flex;
+    justify-content: flex-end;
+
+
+`
+
 export const Button = styled.button`
     @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
     font-family: 'Oxygen', Century Gothic, Verdana; 
-    padding: 7px 4em 7px 4em;
+    padding: 0.75em 2em;
     color: white;
     background: black;
     border-radius: 30px;
     border: none;
     cursor: pointer;
-    font-size: 0.6em;
+    font-size: 0.75em;
     transition: 0.25s;
-    position: absolute;
-    margin-left: -0.5vw;
-    margin-top: 2.5vh;
-    widht: 100%;
 
     &:hover{
         background: #129979;
         color: white;
     }
 
-    @media (max-width: 1286px){
-        margin-top: 1vh;
-        margin-left: -0.2vw;
-    }
-
-    @media (max-width: 725px){
-        margin-top: 0.5vh;
-        margin-left: 1vw;
-    }
-
-    @media (max-width: 563px){
-        margin-top: 0vh;
-        margin-left: 3vw;
-    }
 `
