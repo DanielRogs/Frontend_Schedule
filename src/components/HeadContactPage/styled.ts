@@ -9,11 +9,6 @@ export const Header = styled.head`
     background-color: #01C77F;
     color: black;
 
-    p{
-    font-size: 1.3em;
-    color: white;
-    }
-
 `
 
 export const Pesquisa = styled.div`
@@ -46,6 +41,36 @@ export const Pesquisa = styled.div`
             font-size: 3em;   
         }
     }
+`
+
+export const DivHeaderLeft = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    p{
+        font-size: 1.3em;
+        color: white;
+    }
+
+    .button-exit{
+        text-align: center;
+        border-radius: 0.25em;
+        padding: 0.5em 1em;
+        background: none;
+        
+        color: white;
+        font-size: 1em;
+        
+        border: none;
+
+        cursor: pointer;
+        transition: 0.25s;
+        &:hover{
+        background: red;
+    }
+    }
+
 
 
 `

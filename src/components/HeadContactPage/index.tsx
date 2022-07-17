@@ -1,21 +1,37 @@
 import React from "react";
 import AuthContext from "../../context/AuthContext";
-import { Header, Pesquisa } from "./styled";
+import { Header, Pesquisa, DivHeaderLeft } from "./styled";
 import { AiOutlineSearch } from "react-icons/ai"
+import {CgLogOff} from "react-icons/cg";
 import { ButtonResponsivo } from "../Button/styles";
+import {getContactUser} from '../../services/contact'
 
+
+interface Contact {
+    id: string;
+    name: string;
+    lastname: string;
+    phone: string;
+    email: string;
+
+}
 
 interface State {
     search: string;
 }
 
-class HeaderContactPage extends React.Component<{},State> {
+
+interface Props {
+    setVisible: (visible: boolean) => void
+    setContacts:(contacts:Array<Contact>) => void 
+}
+
+class HeaderContactPage extends React.Component<Props,State> {
 
     constructor(Props:any){
         super(Props)
         this.state = {search:""}
     }
-
 
     render(): React.ReactNode {
         return (
@@ -24,21 +40,35 @@ class HeaderContactPage extends React.Component<{},State> {
                 {
                     ({ user }) => (
                         <Header>
+                            <DivHeaderLeft>
                             <p>Bem vindo, {!!user ? user.name : "null"}</p>
+                            <button className="button-exit"> <CgLogOff/>  Sair</button>
+                            </DivHeaderLeft>
                             <Pesquisa>
-                                <input onChange={(e) => { this.setState({search: e.target.value}) }}
+                                <input onChange={(e) => {this.setState({search: e.target.value}) }}
                                     type="text"
                                     placeholder="Buscar contato"
                                     value={this.state.search}
                                 />
-                                <AiOutlineSearch
-                                    title="lupa"
-                                    color="#01C77F"
-                                />
+
+                                <AuthContext.Consumer>
+                                    {
+                                        ({user}) =>(
+                                            <AiOutlineSearch
+                                                className="icone_pesquisa"
+                                                title="lupa"
+                                                color="#01C77F"
+                                                onClick={async () => {this.props.setContacts(await getContactUser(user!._id))}}
+                                            />
+                                        )
+                                    }
+                                </AuthContext.Consumer>
+
 
                             </Pesquisa>
 
                             <ButtonResponsivo
+                                onClick={() => this.props.setVisible(true)}
                                 color="#01C77F"
                                 Tletra={1.2}
                                 padding={1.5}>
