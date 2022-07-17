@@ -84,7 +84,7 @@ class ContactPage extends React.Component<{}, State>{
                 <HeaderContactPage setContacts={this.setContacts.bind(this)} setVisible={this.setModalVisible.bind(this)}/>
     
                 <DivModal>
-                    <Modal modalIsVisible={this.state.modalIsVisible} setVisible={this.setModalVisible.bind(this)}/>
+                    <Modal modalIsVisible={this.state.modalIsVisible} setVisible={this.setModalVisible.bind(this)} setContacts={this.setContacts.bind(this)}/>
                 </DivModal>
 
                 <DivTitle>
