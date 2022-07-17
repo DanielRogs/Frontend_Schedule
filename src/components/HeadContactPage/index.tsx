@@ -4,19 +4,26 @@ import { Header, Pesquisa } from "./styled";
 import { AiOutlineSearch } from "react-icons/ai"
 import { IconContext } from "react-icons";
 import { ButtonResponsivo } from "../Button/styles";
+import {getContactUser} from '../../services/contact'
+
 
 
 interface State {
     search: string;
 }
 
-class HeaderContactPage extends React.Component<{},State> {
+
+interface Props {
+    setVisible: (visible: boolean) => void
+    setContacts:(contacts:Array<any>) => void 
+}
+
+class HeaderContactPage extends React.Component<Props,State> {
 
     constructor(Props:any){
         super(Props)
         this.state = {search:""}
     }
-
 
     render(): React.ReactNode {
         return (
@@ -32,16 +39,24 @@ class HeaderContactPage extends React.Component<{},State> {
                                     placeholder="Buscar contato"
                                     value={this.state.search}
                                 />
-                                
-                                <IconContext.Provider value={{ color:"#01C77F", className:"icone_pesquisa" }}>
-                                    <AiOutlineSearch
-                                        title="lupa"
-                                    />
-                                </IconContext.Provider>
-                            
+
+                                <AuthContext.Consumer>
+                                    {
+                                        ({user}) =>(
+                                            <AiOutlineSearch
+                                                className="icone_pesquisa"
+                                                title="lupa"
+                                                color="#01C77F"
+                                                onClick={async () => {this.props.setContacts(await getContactUser(user!._id))}}
+                                            />
+                                        )
+                                    }
+                                </AuthContext.Consumer>
+
                             </Pesquisa>
 
                             <ButtonResponsivo
+                                onClick={() => this.props.setVisible(true)}
                                 color="#01C77F"
                                 Tletra={1.2}
                                 padding={1.5}>

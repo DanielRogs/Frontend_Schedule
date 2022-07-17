@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 
 
@@ -34,5 +35,14 @@ export const DivContacts = styled.div`
     width: 80vw;
     margin: 0 auto;
 
+`
 
+export const DivModal = styled.div`
+    align: center;
+    margin-top: 20px;
+    display: flex;
+    margin-left: 45vw;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
 `

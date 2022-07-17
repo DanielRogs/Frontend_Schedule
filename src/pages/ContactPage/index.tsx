@@ -5,10 +5,13 @@ import { Link } from 'react-router-dom';
 import {
     DivTitle,
     H2,
-    DivContacts
+    DivContacts,
+    DivModal,
 } from './styled'
 import MainCard from "../../components/MainCard";
-
+import AuthContext from "../../context/AuthContext";
+import Modal from "../../components/Modal";
+import {getContactUser} from '../../services/contact'
 
 interface Contact {
     id: string;
@@ -20,25 +23,29 @@ interface Contact {
 }
 interface State {
     contacts: Array<Contact>
+    modalIsVisible: boolean
 }
 
 
 
-
-
 class ContactPage extends React.Component<{}, State>{
+
+ // static contextType = AuthContext;
+ // declare context: React.ContextType<typeof AuthContext>
+
     constructor(Props: any) {
         super(Props)
-        this.state = {
-            contacts:
-                [
-                    { id: '1', name: "Alex", lastname: "Fernandes", phone: "61999999999", email: "alex@gmail.com" },
-                    { id: '2', name: "Julia", lastname: "Guimarães", phone: "61985200547", email: "jujudopix@hotmail.com" },
-                    { id: '3asd21', name: "Cleber", lastname: "Flamengo", phone: "779980009999", email: "clebinhoplays@gmail.com" },
-                    { id: 'a122ds21%%$', name: "Claudia", lastname: "Fernando", phone: "61988550020", email: "pepeenenem100@orkut.com" }
-                ]
-        }
+
+        this.state = {modalIsVisible: false, contacts: []}
     }
+
+    setModalVisible (visible: boolean) {
+        this.setState({modalIsVisible : visible})
+
+    }
+
+    
+
 
     RenderContacts(contacts: Array<Contact>) {
         const listContacts = contacts.map((contact) =>
@@ -56,13 +63,30 @@ class ContactPage extends React.Component<{}, State>{
         );
     }
 
+    setContacts(contacts:Array<Contact>){
+        this.setState({contacts})
+
+    }
+
+//async componentDidMount () {
+//    const {user} = this.context
+//    this.setContacts(await getContactUser(user!._id))
+//    
+//}
+
 
 
 
     render(): React.ReactNode {
         return (
             <>
-                <HeaderContactPage />
+
+                <HeaderContactPage setContacts={this.setContacts.bind(this)} setVisible={this.setModalVisible.bind(this)}/>
+    
+                <DivModal>
+                    <Modal modalIsVisible={this.state.modalIsVisible} setVisible={this.setModalVisible.bind(this)}/>
+                </DivModal>
+
                 <DivTitle>
                     <img src={Logo} alt="Logo Schedule" />
                     <H2>Schedule</H2>
