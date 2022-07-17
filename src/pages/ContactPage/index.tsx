@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom';
 import {
     DivTitle,
     H2,
-    DivContacts
+    DivContacts,
+    DivModal,
 } from './styled'
 import MainCard from "../../components/MainCard";
 import AuthContext from "../../context/AuthContext";
-
+import Modal from "../../components/Modal";
 import {getContactUser} from '../../services/contact'
 
 interface Contact {
@@ -22,6 +23,7 @@ interface Contact {
 }
 interface State {
     contacts: Array<Contact>
+    modalIsVisible: boolean
 }
 
 
@@ -33,9 +35,13 @@ class ContactPage extends React.Component<{}, State>{
 
     constructor(Props: any) {
         super(Props)
-        this.state = {
-            contacts:[]
-        }
+
+        this.state = {modalIsVisible: false, contacts: []}
+    }
+
+    setModalVisible (visible: boolean) {
+        this.setState({modalIsVisible : visible})
+
     }
 
     
@@ -74,7 +80,13 @@ class ContactPage extends React.Component<{}, State>{
     render(): React.ReactNode {
         return (
             <>
-                <HeaderContactPage setContacts={this.setContacts.bind(this)} />
+
+                <HeaderContactPage setContacts={this.setContacts.bind(this)} setVisible={this.setModalVisible.bind(this)}/>
+    
+                <DivModal>
+                    <Modal modalIsVisible={this.state.modalIsVisible} setVisible={this.setModalVisible.bind(this)}/>
+                </DivModal>
+
                 <DivTitle>
                     <img src={Logo} alt="Logo Schedule" />
                     <H2>Schedule</H2>
