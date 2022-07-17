@@ -36,6 +36,11 @@ export const DivFigures = styled.div`
     gap: 20%;
     align-items: flex-start;
     width: 20%
+
+    button{
+        background: none;
+        border: none;
+    }
 `
 
 export const DivBottom = styled.div`

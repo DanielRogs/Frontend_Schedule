@@ -45,4 +45,10 @@ export const DivModal = styled.div`
     justify-content: center;
     position: absolute;
     z-index: 10;
+    
+`
+
+export const DivModalEdit = styled.div`
+    position: absolute;
+    z-index: 9;
 `

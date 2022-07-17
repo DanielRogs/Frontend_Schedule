@@ -26,21 +26,15 @@ interface State {
 }
 
 interface Props {
-    modalIsVisible: boolean
-    setVisible: (visible: boolean) => void
+    
 }
 
-class Modal extends React.Component<Props, State>{
+class ModalEdit extends React.Component<Props, State>{
     constructor(Props: any) {
         super(Props)
-        this.handleClick = this.handleClick.bind(this);
         this.state = { nome: '', telefone: '', telefonefixo: '', email: '' }
     }
 
-    
-    handleClick() {
-        this.props.setVisible(false)
-      }
     
 
     render(): React.ReactNode {
@@ -48,13 +42,12 @@ class Modal extends React.Component<Props, State>{
 
             <>
             
-                {this.props.modalIsVisible ? (
                     <Div>
 
                         <HeadDiv>
-                            <Tittle>Adicionar Contato</Tittle>
+                            <Tittle>Editar Contato:</Tittle>
 
-                            <button onClick={this.handleClick}>
+                            <button>
                                 <Img1 src={Close} />
                             </button>
                             
@@ -90,10 +83,10 @@ class Modal extends React.Component<Props, State>{
                                     <Img src={Perfil}/>
                                 </div>
                                 <div>
-                                    <ButtonSub>Adicionar imagem</ButtonSub>
+                                    <ButtonSub>Alterar Imagem</ButtonSub>
                                 </div>
                                 <div className="confirmButtom">
-                                    <Button onClick={this.handleClick}>Confirmar</Button>
+                                    <Button>Alterar</Button>
                                 </div>
                             </UserDiv2>  
 
@@ -101,10 +94,6 @@ class Modal extends React.Component<Props, State>{
                     
 
                     </Div>
-                ) :
-                    null
-                }
-
 
             </>
 
@@ -114,4 +103,4 @@ class Modal extends React.Component<Props, State>{
 
 }
 
-export default Modal;
+export default ModalEdit;

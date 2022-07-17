@@ -4,8 +4,7 @@ import {
         LogoDiv,
         Img,
         Logo,
-        AddContDiv,
-        Desc,
+        DescButton,
         } from "./styled";
 import LogoAg from '../../assets/Image/logo.svg'
 
@@ -26,9 +25,9 @@ class HeadInfo extends React.Component{
                         <Img src={LogoAg}/> <Logo>Schedule</Logo>
                     </LogoDiv>
                     
-                    <AddContDiv>
-                        <Desc>Adicionar Contato</Desc>
-                    </AddContDiv>
+                    <div>
+                        <DescButton>Adicionar Contato</DescButton>
+                    </div>
                 </Div>
             
             </>

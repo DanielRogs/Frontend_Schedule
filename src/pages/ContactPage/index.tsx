@@ -7,11 +7,13 @@ import {
     H2,
     DivContacts,
     DivModal,
+    DivModalEdit,
 } from './styled'
 import MainCard from "../../components/MainCard";
 import AuthContext from "../../context/AuthContext";
 import Modal from "../../components/Modal";
 import {getContactUser} from '../../services/contact'
+import BackgroundModalEdit from "../../components/BackgoundModalEdit";
 
 interface Contact {
     id: string;
@@ -81,8 +83,11 @@ class ContactPage extends React.Component<{}, State>{
         return (
             <>
 
+                <DivModalEdit>
+                    <BackgroundModalEdit />
+                </DivModalEdit>
+
                 <HeaderContactPage setContacts={this.setContacts.bind(this)} setVisible={this.setModalVisible.bind(this)}/>
-    
                 <DivModal>
                     <Modal modalIsVisible={this.state.modalIsVisible} setVisible={this.setModalVisible.bind(this)}/>
                 </DivModal>
@@ -91,6 +96,8 @@ class ContactPage extends React.Component<{}, State>{
                     <img src={Logo} alt="Logo Schedule" />
                     <H2>Schedule</H2>
                 </DivTitle>
+
+                
 
                 <DivContacts>
                     {this.RenderContacts(this.state.contacts)}

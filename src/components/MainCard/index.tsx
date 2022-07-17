@@ -33,8 +33,13 @@ class MainCard extends React.Component<Props>{
                         <Img src={Perfil} alt="foto de perfil do contato" />
                     </DivImg>
                     <DivFigures>
-                        <ImgFig src={Lapis} alt="Figura de lapis" />
-                        <ImgFig src={Lixo} alt="Figura de lixeira" />
+                        <button>
+                            <ImgFig src={Lapis} alt="Figura de lapis" />
+                        </button>
+                        <button>
+                            <ImgFig src={Lixo} alt="Figura de lixeira" />
+                        </button>
+                        
                     </DivFigures>
                 </DivTop>
                 <DivBottom>

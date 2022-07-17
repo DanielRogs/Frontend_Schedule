@@ -31,15 +31,18 @@ export const Logo = styled.p`
     text-decoration-color: white;
 `
 
-export const AddContDiv = styled.div`
+export const DescButton = styled.button`
+    background: #01C77F;
+    border-radius: 5px;
+    padding: 10px 2em 10px 2em;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.25s;
+    font-size: 20px;
 
-`
-
-export const Desc = styled.p`
-    font-family: 'Oxygen', Century Gothic;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 30px;
+&:hover{
+    background: #129979;
     color: black;
+}
 `
