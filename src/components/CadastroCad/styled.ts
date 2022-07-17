@@ -9,9 +9,11 @@ export const Div = styled.div`
 `;
 
 export const DivTittle = styled.div`
-    background: white;
-    heigth: auto;
-    width: 150px;
+
+    background: #F5F5F5;
+    height: auto;
+    width: 10%;
+
     text-align: center;
     margin: 0 auto;
 `;
@@ -23,11 +25,11 @@ export const DivInput = styled.div`
 
     @media (max-width: 620px) {
         width: 250px;
-    {
+    }
 
     @media (max-width: 411px) {
         width: 150px;
-    {
+    }
 `
 
 export const DivButton = styled.div`
@@ -37,7 +39,7 @@ export const DivButton = styled.div`
 export const Tittle = styled.h3`
     @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
     font-family: Oxygen, Century Gothic, Verdana;
-    font-size: 20px;
+    font-size: max(2vw, 20px);
     color: #000000;
     margin-top: -15px;
 `;
