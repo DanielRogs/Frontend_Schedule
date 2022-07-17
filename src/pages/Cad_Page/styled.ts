@@ -1,9 +1,12 @@
 import styled from "styled-components";
-import fundo1 from '../../assets/Image/CadFooterFundo.jpg'
+import fundo1 from '../../assets/Image/CadFooterFundo.jpg';
 
 export const Div = styled.div`
+    
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    height: 100vh;
 `
 
 export const DivFooter = styled.div`
@@ -19,6 +22,7 @@ export const DivFooter = styled.div`
       
       @media (min-width: 1369px) {
           height: 39vw;
+        }
 `
 
 export const DivLogo = styled.div`
@@ -35,6 +39,7 @@ export const Img = styled.img`
 
 export const H2 = styled.h2`
     font-family: Oxygen, Century Gothic, Verdana;
+    color: black;
     text-decoration: underline;
     text-decoration-color: #01C77F;
     font-weight: 500;
