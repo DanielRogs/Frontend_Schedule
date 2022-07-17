@@ -32,7 +32,6 @@ class HeaderContactPage extends React.Component<{},State> {
                                     value={this.state.search}
                                 />
                                 <AiOutlineSearch
-                                    className="icone_pesquisa"
                                     title="lupa"
                                     color="#01C77F"
                                 />
