@@ -7,8 +7,9 @@ interface Props {
 export const Header = styled.header`
     display: flex;
     justify-content: space-between;
-    height: 10vh;
-    margin-bottom: 20vh;
+    overflow: hidden;
+    height: 15vh;
+    margin-bottom: 8vw;
 `;
 
 export const Title = styled.h1`
@@ -36,7 +37,7 @@ export const Img = styled.img<Props>`
 export const Section = styled.section`
     display: flex;
     height: 50vh;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
     align-items: center;
 
@@ -65,23 +66,19 @@ export const Section = styled.section`
 
 export const Footer = styled.footer`
     display: flex;
-    height: 5vh;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;   
 
-    @media (max-width: 1075px) {
+    @media (max-width: 1151px) {
         Img{
-            height: 16vw;
+            height: 30vh;
         }
     }
 
-    @media (max-width: 911px) {
+    @media (max-width: 671px) {
         Img{
-            height: 30vw;
-        }
-    }
-
-    @media (max-width: 811px) {
-        Img{
-            height: 40vw;
+            height: 35vh;
         }
     }
 `;
