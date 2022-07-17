@@ -24,4 +24,8 @@ export const Submit = styled.button<Props>`
     @media (max-width: 1075px) {
         font-size: ${(p) => p.Tletra/2}px;
     }
+
+    @media (max-width: 574px) {
+        font-size: ${(p) => p.Tletra/4}px;
+    }
 `

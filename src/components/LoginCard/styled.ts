@@ -52,6 +52,10 @@ export const Input = styled.input`
     @media (max-width: 905px) {
         width: 200px;
     }
+
+    @media (max-width: 572px) {
+        width: 100px;
+    }
 `
 
 export const Tittle = styled.h2`
