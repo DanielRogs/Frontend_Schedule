@@ -8,7 +8,7 @@ import {
     DivContacts
 } from './styled'
 import MainCard from "../../components/MainCard";
-import ConfirmacaoExclusao from "../../components/ConfirmacaoExclusao";
+import ConfirmacaoExclusao from "../../components/ModalQuestion";
 
 
 interface Contact {
@@ -63,7 +63,6 @@ class ContactPage extends React.Component<{}, State>{
     render(): React.ReactNode {
         return (
             <>
-                <ConfirmacaoExclusao />
                 <HeaderContactPage />
                 <DivTitle>
                     <img src={Logo} alt="Logo Schedule" />
