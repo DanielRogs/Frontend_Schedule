@@ -7,9 +7,7 @@ import { IoWarningOutline } from "react-icons/io5";
 interface Props {
   errorMensage: string;
   mensage: string;
-}
-interface State {
-    closeWarning: Function;
+  setWarningVisible: (visible:boolean) => void;
 }
 
 class WarningModal extends React.Component<Props> {
@@ -21,7 +19,7 @@ class WarningModal extends React.Component<Props> {
     return (
       <Div>
         <DivExit>
-          <A onClick={this.state.closeWarning}>
+          <A onClick={() => this.props.setWarningVisible(false)}>
             <Img heightPx={3} src={Sair} />
           </A>
         </DivExit>
