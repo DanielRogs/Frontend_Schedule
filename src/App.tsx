@@ -1,7 +1,7 @@
 import React from 'react';
 import AppRoutes from './routes';
 import GlobalStyle from './globalStyles';
-
+import InfoPage from './pages/InfoPage';
 
 class App extends React.Component  {
   render (){
@@ -9,6 +9,7 @@ class App extends React.Component  {
       <>
         <GlobalStyle />
         <AppRoutes />
+        <InfoPage />
       </>
     )
   }
