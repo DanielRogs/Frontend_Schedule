@@ -9,6 +9,9 @@ import {
     DivModal
 } from './styled'
 import MainCard from "../../components/MainCard";
+
+import ConfirmacaoExclusao from "../../components/ModalQuestion";
+
 import AuthContext from "../../context/AuthContext";
 import Modal from "../../components/Modal";
 import { getContactUser } from '../../services/contact'
