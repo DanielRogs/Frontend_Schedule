@@ -44,7 +44,7 @@ class HeaderContactPage extends React.Component<Props,State> {
                                                 className="icone_pesquisa"
                                                 title="lupa"
                                                 color="#01C77F"
-                                                onClick={async () => {this.props.setContacts(await getContactUser("62d3709ec06055f5637883a3"))}}
+                                                onClick={async () => {this.props.setContacts(await getContactUser(user!._id))}}
                                             />
                                         )
                                     }
