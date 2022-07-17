@@ -38,7 +38,7 @@ export const DivContacts = styled.div`
 `
 
 export const DivModal = styled.div`
-    align: center;
+    align-items: center;
     margin-top: 20px;
     display: flex;
     margin-left: 45vw;

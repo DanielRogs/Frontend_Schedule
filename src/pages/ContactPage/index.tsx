@@ -6,12 +6,12 @@ import {
     DivTitle,
     H2,
     DivContacts,
-    DivModal,
+    DivModal
 } from './styled'
 import MainCard from "../../components/MainCard";
 import AuthContext from "../../context/AuthContext";
 import Modal from "../../components/Modal";
-import {getContactUser} from '../../services/contact'
+import { getContactUser } from '../../services/contact'
 
 interface Contact {
     id: string;
@@ -30,21 +30,21 @@ interface State {
 
 class ContactPage extends React.Component<{}, State>{
 
- // static contextType = AuthContext;
- // declare context: React.ContextType<typeof AuthContext>
+    // static contextType = AuthContext;
+    // declare context: React.ContextType<typeof AuthContext>
 
     constructor(Props: any) {
         super(Props)
 
-        this.state = {modalIsVisible: false, contacts: []}
+        this.state = { modalIsVisible: false, contacts: [] }
     }
 
-    setModalVisible (visible: boolean) {
-        this.setState({modalIsVisible : visible})
+    setModalVisible(visible: boolean) {
+        this.setState({ modalIsVisible: visible })
 
     }
 
-    
+
 
 
     RenderContacts(contacts: Array<Contact>) {
@@ -52,27 +52,27 @@ class ContactPage extends React.Component<{}, State>{
             <MainCard
                 key={contact.id}
                 name={contact.name + " " + contact.lastname}
-                phone={"("+contact.phone.slice(0,2)+")"+" "+contact.phone.slice(2,7)+"-"+contact.phone.slice(7,11)}
+                phone={"(" + contact.phone.slice(0, 2) + ")" + " " + contact.phone.slice(2, 7) + "-" + contact.phone.slice(7, 11)}
             />
         );
-        
-        return(
+
+        return (
             <>
-            {listContacts}
+                {listContacts}
             </>
         );
     }
 
-    setContacts(contacts:Array<Contact>){
-        this.setState({contacts})
+    setContacts(contacts: Array<Contact>) {
+        this.setState({ contacts })
 
     }
 
-//async componentDidMount () {
-//    const {user} = this.context
-//    this.setContacts(await getContactUser(user!._id))
-//    
-//}
+    //async componentDidMount () {
+    //    const {user} = this.context
+    //    this.setContacts(await getContactUser(user!._id))
+    //    
+    //}
 
 
 
@@ -81,10 +81,14 @@ class ContactPage extends React.Component<{}, State>{
         return (
             <>
 
-                <HeaderContactPage setContacts={this.setContacts.bind(this)} setVisible={this.setModalVisible.bind(this)}/>
-    
+                <HeaderContactPage
+                    setContacts={this.setContacts.bind(this)}
+                    setVisible={this.setModalVisible.bind(this)} />
+
                 <DivModal>
-                    <Modal modalIsVisible={this.state.modalIsVisible} setVisible={this.setModalVisible.bind(this)} setContacts={this.setContacts.bind(this)}/>
+                    <Modal modalIsVisible={this.state.modalIsVisible}
+                        setVisible={this.setModalVisible.bind(this)}
+                        setContacts={this.setContacts.bind(this)} />
                 </DivModal>
 
                 <DivTitle>
