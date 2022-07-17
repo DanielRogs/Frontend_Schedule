@@ -5,17 +5,21 @@ import { AiOutlineSearch } from "react-icons/ai"
 import { ButtonResponsivo } from "../Button/styles";
 
 
+
 interface State {
     search: string;
 }
 
-class HeaderContactPage extends React.Component<{},State> {
+interface Props {
+    setVisible: (visible: boolean) => void
+}
+
+class HeaderContactPage extends React.Component<Props,State> {
 
     constructor(Props:any){
         super(Props)
         this.state = {search:""}
     }
-
 
     render(): React.ReactNode {
         return (
@@ -40,6 +44,7 @@ class HeaderContactPage extends React.Component<{},State> {
                             </Pesquisa>
 
                             <ButtonResponsivo
+                                onClick={() => this.props.setVisible(true)}
                                 color="#01C77F"
                                 Tletra={1.2}
                                 padding={1.5}>
