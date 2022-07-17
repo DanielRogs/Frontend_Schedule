@@ -3,12 +3,9 @@ import {Route, Routes } from 'react-router-dom';
 import LoginPage from "../pages/LoginPage";
 import CadPage from "../pages/Cad_Page";
 import AuthContext from "../context/AuthContext";
-import { InterfaceAuthContext } from "../context/AuthContext";
+import ContactPage from "../pages/ContactPage";
 
 export default class AppRoutes extends React.Component{
-
-    static contextType = AuthContext
-    //declare context: React.ContextType<typeof AuthContext>
  
     userNotLoggedRoutes = ( 
 
@@ -20,20 +17,13 @@ export default class AppRoutes extends React.Component{
     )
 
     userLogged = (
-                 <AuthContext.Consumer>
-                     {
-                    ({user}) => (
-                    <Routes>
-                        <Route path="*" element={<h1>Bem vindo, {!! user ? user.name:"null"} !!!</h1>} />
-                    </Routes>
-                    )
-                     }
-                 </AuthContext.Consumer>
+             <Routes>
+                <Route path="/*" element={<ContactPage/>} />
+           </Routes>
     )
 
 
     render(){
-        const user= this.context
 
         return(
             <AuthContext.Consumer>

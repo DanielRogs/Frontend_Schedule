@@ -13,4 +13,15 @@ export const login = async (email:string, password:string) :Promise<any> => {
 
 }
 
+export const cadastro = async (name:string, email:string, password:string) =>{
+    try {
+        const res = await api.post('/user', {name, email, password})
+        alert(res.data.message)
+        
+    } catch (err) {
+        alert(err)
+        
+    }
+
+}
 

@@ -28,4 +28,21 @@ export const Submit = styled.button<Props>`
     @media (max-width: 574px) {
         font-size: ${(p) => p.Tletra/4}px;
     }
+
+`
+export const ButtonResponsivo = styled.button<Props>`
+    background: ${(p) => p.color};
+    border-radius: 5px;
+    padding: 1em ${(p) => p.padding}em 1em ${(p) => p.padding}em;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.25s;
+    font-size: ${(p) => p.Tletra}em;
+
+    &:hover{
+        background: #129979;
+        color: black;
+    }
+
 `
