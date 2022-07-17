@@ -7,24 +7,23 @@ import { Title, Img, Header, Section, Footer } from "./styled";
 
 import Warning from '../../components/Warning';
 
-interface State{
-  warnIsVisible: boolean;
-}
 
-class LoginPage extends React.Component <{}, State> {
-  constructor(props: State) {
+class LoginPage extends React.Component<{}> {
+  constructor(props: any) {
     super(props);
-    this.state = {warnIsVisible:false}
+    
   }
 
-  closeWarning(){ 
-    this.setState({warnIsVisible : false}) 
-  } 
 
   render(): React.ReactNode {
     return (
       <>
-        <Warning handleWarning={this.closeWarning()}/>
+        <Warning
+          callbackParentIsVisible = {false}
+          errorMensage="Email ou senha inválidos!"
+          mensage="Tente Novamente"
+        />
+
         <Header className="headerLogin">
           <Title className="scheduleTitle">Schedule</Title>
           <Img
