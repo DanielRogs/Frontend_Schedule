@@ -3,13 +3,18 @@ import AuthContext from "../../context/AuthContext";
 import { Header, Pesquisa } from "./styled";
 import { AiOutlineSearch } from "react-icons/ai"
 import { ButtonResponsivo } from "../Button/styles";
+import {getContactUser} from '../../services/contact'
 
 
 interface State {
     search: string;
 }
 
-class HeaderContactPage extends React.Component<{},State> {
+interface Props{
+    setContacts:(contacts:Array<any>) => void  
+
+}
+class HeaderContactPage extends React.Component<Props,State> {
 
     constructor(Props:any){
         super(Props)
@@ -31,11 +36,19 @@ class HeaderContactPage extends React.Component<{},State> {
                                     placeholder="Buscar contato"
                                     value={this.state.search}
                                 />
-                                <AiOutlineSearch
-                                    className="icone_pesquisa"
-                                    title="lupa"
-                                    color="#01C77F"
-                                />
+
+                                <AuthContext.Consumer>
+                                    {
+                                        ({user}) =>(
+                                            <AiOutlineSearch
+                                                className="icone_pesquisa"
+                                                title="lupa"
+                                                color="#01C77F"
+                                                onClick={async () => {this.props.setContacts(await getContactUser("62d3709ec06055f5637883a3"))}}
+                                            />
+                                        )
+                                    }
+                                </AuthContext.Consumer>
 
                             </Pesquisa>
 
