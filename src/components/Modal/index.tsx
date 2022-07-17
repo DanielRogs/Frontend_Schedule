@@ -22,6 +22,15 @@ import { addContact, getContactUser } from "../../services/contact";
 import AuthContext from "../../context/AuthContext";
 
 
+interface Contact {
+    id: string;
+    name: string;
+    lastname: string;
+    phone: string;
+    email: string;
+
+}
+
 interface State {
     name: string;
     lastname: string;
@@ -32,7 +41,7 @@ interface State {
 interface Props {
     modalIsVisible: boolean
     setVisible: (visible: boolean) => void
-    setContacts:(contacts:Array<any>) => void 
+    setContacts:(contacts:Array<Contact>) => void 
 }
 
 class Modal extends React.Component<Props, State>{

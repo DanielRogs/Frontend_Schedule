@@ -1,12 +1,20 @@
 import React from "react";
 import AuthContext from "../../context/AuthContext";
-import { Header, Pesquisa } from "./styled";
+import { Header, Pesquisa, DivHeaderLeft } from "./styled";
 import { AiOutlineSearch } from "react-icons/ai"
-import { IconContext } from "react-icons";
+import {CgLogOff} from "react-icons/cg";
 import { ButtonResponsivo } from "../Button/styles";
 import {getContactUser} from '../../services/contact'
 
 
+interface Contact {
+    id: string;
+    name: string;
+    lastname: string;
+    phone: string;
+    email: string;
+
+}
 
 interface State {
     search: string;
@@ -15,7 +23,7 @@ interface State {
 
 interface Props {
     setVisible: (visible: boolean) => void
-    setContacts:(contacts:Array<any>) => void 
+    setContacts:(contacts:Array<Contact>) => void 
 }
 
 class HeaderContactPage extends React.Component<Props,State> {
@@ -32,9 +40,12 @@ class HeaderContactPage extends React.Component<Props,State> {
                 {
                     ({ user }) => (
                         <Header>
+                            <DivHeaderLeft>
                             <p>Bem vindo, {!!user ? user.name : "null"}</p>
+                            <button className="button-exit"> <CgLogOff/>  Sair</button>
+                            </DivHeaderLeft>
                             <Pesquisa>
-                                <input onChange={(e) => { this.setState({search: e.target.value}) }}
+                                <input onChange={(e) => {this.setState({search: e.target.value}) }}
                                     type="text"
                                     placeholder="Buscar contato"
                                     value={this.state.search}
