@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Div = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: #D1FF1A;
+    background-color: #01C77F;
     width: 40vw;
     border-radius: 10px;
     position: absolute;
@@ -45,14 +45,8 @@ export const Title = styled.h3`
 
 export const DivButtons = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin-bottom: 10px;
-`
-
-export const Button = styled.button`
-    width: 15vw;
-    border-radius: 10px;
-    margin-top: 2px;
 `
 
 export const A = styled.a`
