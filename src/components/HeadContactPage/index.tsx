@@ -2,6 +2,7 @@ import React from "react";
 import AuthContext from "../../context/AuthContext";
 import { Header, Pesquisa } from "./styled";
 import { AiOutlineSearch } from "react-icons/ai"
+import { IconContext } from "react-icons";
 import { ButtonResponsivo } from "../Button/styles";
 import {getContactUser} from '../../services/contact'
 
