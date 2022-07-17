@@ -5,9 +5,12 @@ import { Link } from 'react-router-dom';
 import {
     DivTitle,
     H2,
-    DivContacts
+    DivContacts,
+    DivModal,
 } from './styled'
 import MainCard from "../../components/MainCard";
+import Modal from "../../components/Modal";
+
 
 
 interface Contact {
@@ -20,6 +23,7 @@ interface Contact {
 }
 interface State {
     contacts: Array<Contact>
+    modalIsVisible: boolean
 }
 
 
@@ -29,15 +33,11 @@ interface State {
 class ContactPage extends React.Component<{}, State>{
     constructor(Props: any) {
         super(Props)
-        this.state = {
-            contacts:
-                [
-                    { id: '1', name: "Alex", lastname: "Fernandes", phone: "61999999999", email: "alex@gmail.com" },
-                    { id: '2', name: "Julia", lastname: "Guimarães", phone: "61985200547", email: "jujudopix@hotmail.com" },
-                    { id: '3asd21', name: "Cleber", lastname: "Flamengo", phone: "779980009999", email: "clebinhoplays@gmail.com" },
-                    { id: 'a122ds21%%$', name: "Claudia", lastname: "Fernando", phone: "61988550020", email: "pepeenenem100@orkut.com" }
-                ]
-        }
+        this.state = {modalIsVisible: false, contacts: []}
+    }
+
+    setModalVisible (visible: boolean) {
+        this.setState({modalIsVisible : visible})
     }
 
     RenderContacts(contacts: Array<Contact>) {
@@ -62,7 +62,12 @@ class ContactPage extends React.Component<{}, State>{
     render(): React.ReactNode {
         return (
             <>
-                <HeaderContactPage />
+                <HeaderContactPage setVisible={this.setModalVisible.bind(this)}/>
+    
+                <DivModal>
+                    <Modal modalIsVisible={this.state.modalIsVisible} setVisible={this.setModalVisible.bind(this)}/>
+                </DivModal>
+
                 <DivTitle>
                     <img src={Logo} alt="Logo Schedule" />
                     <H2>Schedule</H2>
