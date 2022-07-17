@@ -1,52 +1,56 @@
-import React from "react";
 import styled from "styled-components";
 
 export const Div = styled.div`
     background-color: #D9D9D9;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
-    width: 290px;
-    height: 358px;
-    box-shadow: 0px -12px #129979;
-    border-radius: 35px;
-    padding: 20px 0px 0px 40px;
-    margin: 20px;
+    width: 30%;
+
+    @media (min-width: 768px){
+        width: 20%;
+    }
+    box-shadow: 0px -0.75em #129979;
+    border-radius: 2em;
+    padding: 2% 3%;
+    margin-bottom: 5%;
 `
 
 export const DivTop = styled.div` 
-display: grid;
-grid-template-columns: 205px 200px;
+    display: flex;
+    justify-content: space-between;
 
 `
 
 export const DivImg = styled.div`
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin: 0 5%;
+    padding: 0.5em;
 
 `
 
 export const DivFigures = styled.div`
-
+    display: flex;
+    gap: 20%;
+    align-items: flex-start;
+    width: 20%
 `
 
 export const DivBottom = styled.div`
-    margin-top: 20px;
 `
 
-export const Name = styled.p`
-    font-size: 24px;
-    font-familly: Century Gothic, Verdana, Arial;
-`
-
-export const Number = styled.p`
-    font-size: 20px;
-    font-familly: Century Gothic, Verdana, Arial;
+export const Text = styled.p`
+    font-size: 1.5em;
+    font-family: Century Gothic, Verdana, Arial;
 `
 
 export const Img = styled.img`
-    width: 90%;
-    width: 140px;
+    max-width: 100%;
 `
 
 export const ImgFig = styled.img`
-    margin-left: 10px;
+    max-width: 50%;  
     cursor: pointer;
 `
