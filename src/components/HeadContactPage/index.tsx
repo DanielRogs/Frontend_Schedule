@@ -2,6 +2,7 @@ import React from "react";
 import AuthContext from "../../context/AuthContext";
 import { Header, Pesquisa } from "./styled";
 import { AiOutlineSearch } from "react-icons/ai"
+import { IconContext } from "react-icons";
 import { ButtonResponsivo } from "../Button/styles";
 
 
@@ -31,12 +32,13 @@ class HeaderContactPage extends React.Component<{},State> {
                                     placeholder="Buscar contato"
                                     value={this.state.search}
                                 />
-                                <AiOutlineSearch
-                                    className="icone_pesquisa"
-                                    title="lupa"
-                                    color="#01C77F"
-                                />
-
+                                
+                                <IconContext.Provider value={{ color:"#01C77F", className:"icone_pesquisa" }}>
+                                    <AiOutlineSearch
+                                        title="lupa"
+                                    />
+                                </IconContext.Provider>
+                            
                             </Pesquisa>
 
                             <ButtonResponsivo
