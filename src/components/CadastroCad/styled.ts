@@ -9,9 +9,11 @@ export const Div = styled.div`
 `;
 
 export const DivTittle = styled.div`
-    background: white;
-    heigth: auto;
-    width: 150px;
+
+    background: #F5F5F5;
+    height: auto;
+    width: 10%;
+
     text-align: center;
     margin: 0 auto;
 `;
@@ -23,11 +25,11 @@ export const DivInput = styled.div`
 
     @media (max-width: 620px) {
         width: 250px;
-    {
+    }
 
     @media (max-width: 411px) {
         width: 150px;
-    {
+    }
 `
 
 export const DivButton = styled.div`
