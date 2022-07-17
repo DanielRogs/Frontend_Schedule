@@ -43,7 +43,6 @@ class MainCard extends React.Component<Props>{
                 </DivBottom>
             </Div>
 
-
         )
     }
 
