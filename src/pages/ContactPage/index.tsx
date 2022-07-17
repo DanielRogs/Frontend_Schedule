@@ -9,9 +9,9 @@ import {
     DivModal,
 } from './styled'
 import MainCard from "../../components/MainCard";
+import AuthContext from "../../context/AuthContext";
 import Modal from "../../components/Modal";
-
-
+import {getContactUser} from '../../services/contact'
 
 interface Contact {
     id: string;
@@ -28,17 +28,24 @@ interface State {
 
 
 
-
-
 class ContactPage extends React.Component<{}, State>{
+
+ // static contextType = AuthContext;
+ // declare context: React.ContextType<typeof AuthContext>
+
     constructor(Props: any) {
         super(Props)
+
         this.state = {modalIsVisible: false, contacts: []}
     }
 
     setModalVisible (visible: boolean) {
         this.setState({modalIsVisible : visible})
+
     }
+
+    
+
 
     RenderContacts(contacts: Array<Contact>) {
         const listContacts = contacts.map((contact) =>
@@ -56,13 +63,25 @@ class ContactPage extends React.Component<{}, State>{
         );
     }
 
+    setContacts(contacts:Array<Contact>){
+        this.setState({contacts})
+
+    }
+
+//async componentDidMount () {
+//    const {user} = this.context
+//    this.setContacts(await getContactUser(user!._id))
+//    
+//}
+
 
 
 
     render(): React.ReactNode {
         return (
             <>
-                <HeaderContactPage setVisible={this.setModalVisible.bind(this)}/>
+
+                <HeaderContactPage setContacts={this.setContacts.bind(this)} setVisible={this.setModalVisible.bind(this)}/>
     
                 <DivModal>
                     <Modal modalIsVisible={this.state.modalIsVisible} setVisible={this.setModalVisible.bind(this)}/>
