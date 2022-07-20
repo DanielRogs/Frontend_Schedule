@@ -9,17 +9,19 @@ import {
     DivModal
 } from './styled'
 import MainCard from "../../components/MainCard";
+
+import ConfirmacaoExclusao from "../../components/ModalQuestion";
+
 import AuthContext from "../../context/AuthContext";
 import Modal from "../../components/Modal";
 import { getContactUser } from '../../services/contact'
 
-interface Contact {
-    id: string;
+export interface Contact {
+    _id: string;
     name: string;
     lastname: string;
     phone: string;
     email: string;
-
 }
 interface State {
     contacts: Array<Contact>
@@ -50,9 +52,11 @@ class ContactPage extends React.Component<{}, State>{
     RenderContacts(contacts: Array<Contact>) {
         const listContacts = contacts.map((contact) =>
             <MainCard
-                key={contact.id}
+                key={contact._id}
                 name={contact.name + " " + contact.lastname}
                 phone={"(" + contact.phone.slice(0, 2) + ")" + " " + contact.phone.slice(2, 7) + "-" + contact.phone.slice(7, 11)}
+                contactId={contact._id}
+                setContacts={this.setContacts.bind(this)}
             />
         );
 

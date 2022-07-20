@@ -11,7 +11,7 @@ class App extends React.Component  {
       <>
         <GlobalStyle />
         <AuthProvider>
-          <AppRoutes />
+          <AppRoutes/>
         </AuthProvider>
       </>
     )
