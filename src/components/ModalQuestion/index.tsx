@@ -21,7 +21,7 @@ class ModalQuestion extends React.Component<Props>{
     return (
       <>
         { this.props.modalVisible ? 
-        <Div>
+        <Div onClick={() =>this.props.setModalVisible(false)  }>
           <ExclModal texto={this.props.texto} setModalVisible = {this.props.setModalVisible} onClickYes={this.props.onClickYes} onClickNo={this.props.onClickNo}/>
         </Div>
         :null}

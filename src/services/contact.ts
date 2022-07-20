@@ -28,3 +28,14 @@ export const addContact = async (name:string, lastname:string, phone:string, ema
 
     }
 }
+
+
+export const deleteContact = async (contactId:string) :Promise<any> => {
+    try{
+        const res = await api.delete('/contact',{params:{contactId}})
+
+    }catch{
+        alert("não foi possível deletar o contato")
+    }
+
+}

@@ -5,16 +5,7 @@ import { AiOutlineSearch } from "react-icons/ai"
 import {CgLogOff} from "react-icons/cg";
 import { ButtonResponsivo } from "../Button/styles";
 import {getContactUser} from '../../services/contact'
-
-
-interface Contact {
-    id: string;
-    name: string;
-    lastname: string;
-    phone: string;
-    email: string;
-
-}
+import { Contact } from "../../pages/ContactPage";
 
 interface State {
     search: string;
@@ -42,7 +33,16 @@ class HeaderContactPage extends React.Component<Props,State> {
                         <Header>
                             <DivHeaderLeft>
                             <p>Bem vindo, {!!user ? user.name : "null"}</p>
-                            <button className="button-exit"> <CgLogOff/>  Sair</button>
+
+
+                            <AuthContext.Consumer>
+                                {
+                                    ({setUser}) =>(
+                                        <button className="button-exit" onClick={() => {setUser(null)}}> <CgLogOff/>  Sair</button>
+                                    )
+                                }
+                            </AuthContext.Consumer>
+
                             </DivHeaderLeft>
                             <Pesquisa>
                                 <input onChange={(e) => {this.setState({search: e.target.value}) }}
