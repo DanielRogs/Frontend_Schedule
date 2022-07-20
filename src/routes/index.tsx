@@ -4,6 +4,7 @@ import LoginPage from "../pages/LoginPage";
 import CadPage from "../pages/Cad_Page";
 import AuthContext from "../context/AuthContext";
 import ContactPage from "../pages/ContactPage";
+import InfoPage from "../pages/InfoPage";
 
 export default class AppRoutes extends React.Component{
  

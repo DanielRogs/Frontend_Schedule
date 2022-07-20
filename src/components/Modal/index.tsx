@@ -18,16 +18,8 @@ import Perfil from '../../assets/Image/PerfilElipse.svg'
 import Close from '../../assets/Image/x.svg'
 import { addContact, getContactUser } from "../../services/contact";
 import AuthContext from "../../context/AuthContext";
+import { Contact } from "../../pages/ContactPage";
 
-
-interface Contact {
-    id: string;
-    name: string;
-    lastname: string;
-    phone: string;
-    email: string;
-
-}
 
 interface State {
     name: string;
