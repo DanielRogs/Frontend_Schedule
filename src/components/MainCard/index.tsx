@@ -46,8 +46,9 @@ class MainCard extends React.Component<Props, State>{
 
     }
 
-   async deletecard(){
+   async deletecard(userId:string){
       await deleteContact(this.props.contactId)
+      this.props.setContacts( await getContactUser(userId))
 
 
     }
@@ -58,7 +59,7 @@ class MainCard extends React.Component<Props, State>{
             <AuthContext.Consumer>
                 {
                     ({user}) =>(
-                        <ModalQuestion modalVisible={this.state.modalQuestionVisible} onClickNo={() => {} } onClickYes={ async() => { this.deletecard();this.props.setContacts( await getContactUser(user!._id))} } setModalVisible={this.modalQuestionVisible.bind(this)}  texto={"Tem certeza que deseja apaga esse contato ?"}/>
+                        <ModalQuestion modalVisible={this.state.modalQuestionVisible} onClickNo={() => {} } onClickYes={ async() => { this.deletecard(user!._id)} } setVisible={this.modalQuestionVisible.bind(this)}  texto={"Tem certeza que deseja apaga esse contato ?"}/>
                     )
                 }
             </AuthContext.Consumer>
